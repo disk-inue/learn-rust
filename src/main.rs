@@ -1,59 +1,74 @@
 use std::io::stdin;
 
 fn main() {
-    let mut args: Vec<&str> = Vec::new();
-    let mut result = 0;
-
     println!("start calculator");
+    println!("q is end calculator");
 
-    println!("please number >");
-    let mut arg = String::new();
-    stdin().read_line(&mut arg).expect("Failed to read line");
-    args.push(arg.trim());
+    loop {
+        let mut args: Vec<&str> = Vec::new();
+        let mut result = 0;
 
-    let mut arg = String::new();
-    println!("please four arithmetic operators(+, -, *, /) >");
-    stdin().read_line(&mut arg).expect("Failed to read line");
-    let parsed_arg = arg.trim();
-    match parsed_arg {
-        "+" => args.push(parsed_arg),
-        "-" => args.push(parsed_arg),
-        "*" => args.push(parsed_arg),
-        "/" => args.push(parsed_arg),
-        _ => {
-            println!("please four arithmetic operators(+, -, *, /)");
-            return;
+        println!("number >");
+        let input_left_number = input();
+        match input_left_number.as_str() {
+            "q" => {
+                println!("end calculator");
+                break;
+            }
+            _ => {}
         }
-    }
+        args.push(&input_left_number);
 
-    let mut arg = String::new();
-    println!("please number >");
-    stdin().read_line(&mut arg).expect("Failed to read line");
-    args.push(arg.trim());
-
-    let mut arg = String::new();
-    println!("please four arithmetic operators or enter >");
-    stdin().read_line(&mut arg).expect("Failed to read line");
-    args.push(arg.trim());
-
-    for n in 0..args.len() {
-        if n == 0 {
-            result += args[n].parse::<i32>().unwrap();
-            continue;
+        println!("+, -, *, / >");
+        let input_arithmetic = input();
+        match input_arithmetic.as_str() {
+            "+" => args.push(&input_arithmetic),
+            "-" => args.push(&input_arithmetic),
+            "*" => args.push(&input_arithmetic),
+            "/" => args.push(&input_arithmetic),
+            _ => {
+                break;
+            }
         }
-        if n % 2 == 0 {
-            let num = args[n].parse::<i32>().unwrap();
-            match args[n - 1] {
-                "+" => result += num,
-                "-" => result -= num,
-                "*" => result *= num,
-                "/" => result /= num,
-                _ => {
-                    println!("please four arithmetic operators(+, -, *, /)");
-                    return;
+
+        println!("number >");
+        let input_right_number = input();
+        match input_left_number.as_str() {
+            "q" => {
+                println!("end calculator");
+                break;
+            }
+            _ => {}
+        }
+        args.push(&input_right_number);
+
+        for n in 0..args.len() {
+            if n == 0 {
+                result += args[n].parse::<i32>().unwrap();
+                continue;
+            }
+            if n % 2 == 0 {
+                let num = args[n].parse::<i32>().unwrap();
+                match args[n - 1] {
+                    "+" => result += num,
+                    "-" => result -= num,
+                    "*" => result *= num,
+                    "/" => result /= num,
+                    _ => {
+                        break;
+                    }
                 }
             }
         }
+        println!(
+            "calculate > {} {} {} = {}",
+            args[0], args[1], args[2], result
+        )
     }
-    println!("{}", result)
+}
+
+fn input() -> String {
+    let mut input = String::new();
+    stdin().read_line(&mut input).expect("Failed to read line");
+    return input.trim().to_string();
 }
