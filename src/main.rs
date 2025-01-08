@@ -12,7 +12,13 @@ fn main() {
             println!("end calculator");
             break;
         }
-        args.push(&input_left_number);
+        let input_left_number: f64 = match input_left_number.parse() {
+            Ok(num) => num,
+            Err(_) => {
+                println!("Please input number! end calculator");
+                break;
+            }
+        };
 
         let input_arithmetic = input("+, -, *, / > ");
         match input_arithmetic.as_str() {
@@ -30,10 +36,19 @@ fn main() {
             println!("end calculator");
             break;
         }
-        args.push(&input_right_number);
+        let input_right_number: f64 = match input_right_number.parse() {
+            Ok(num) => num,
+            Err(_) => {
+                println!("Please input number! end calculator");
+                break;
+            }
+        };
 
-        let result = calculate(&args);
-        println!("calculate > {} = {}", args.join(" "), result)
+        let result = calculate(&input_left_number, &input_arithmetic, &input_right_number);
+        println!(
+            "calculate > {} {} {} = {}",
+            input_left_number, input_arithmetic, input_right_number, result
+        )
     }
 }
 
@@ -45,25 +60,12 @@ fn input(message: &str) -> String {
     input.trim().to_string()
 }
 
-fn calculate(args: &Vec<&str>) -> f64 {
-    let mut result: f64 = 0.0;
-    for n in 0..args.len() {
-        if n == 0 {
-            result += args[n].parse::<f64>().unwrap();
-            continue;
-        }
-        if n % 2 == 0 {
-            let num = args[n].parse::<f64>().unwrap();
-            match args[n - 1] {
-                "+" => result += num,
-                "-" => result -= num,
-                "*" => result *= num,
-                "/" => result /= num,
-                _ => {
-                    return 0.0;
-                }
-            }
-        }
+fn calculate(left_number: &f64, arithmetic: &str, right_number: &f64) -> f64 {
+    match arithmetic {
+        "+" => left_number + right_number,
+        "-" => left_number - right_number,
+        "*" => left_number * right_number,
+        "/" => left_number / right_number,
+        _ => 0.0,
     }
-    result
 }
