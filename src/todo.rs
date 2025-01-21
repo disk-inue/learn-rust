@@ -12,7 +12,7 @@ enum Status {
 struct Todo {
     id: i32,
     title: String,
-    done: Status,
+    status: Status,
 }
 
 impl Todo {
@@ -20,14 +20,21 @@ impl Todo {
         Todo {
             id: 0,
             title,
-            done: Status::Todo,
+            status: Status::Todo,
         }
     }
     fn done(&self) -> Todo {
         Todo {
             id: self.id,
             title: self.title.clone(),
-            done: Status::Done,
+            status: Status::Done,
+        }
+    }
+    fn update(&self, title: String) -> Todo {
+        Todo {
+            id: self.id,
+            title,
+            status: self.status.clone(),
         }
     }
 }
@@ -38,9 +45,9 @@ pub fn exec() {
     println!("start todo");
     loop {
         println!("select menu");
-        println!("1. add\n2. edit\n3. done\n4. delete");
+        println!("1. add\n2. edit\n3. done\n4. delete\n5. list");
 
-        let select_number: u8 = match input(" > ").parse() {
+        let select_number: u8 = match input("> ").parse() {
             Ok(num) => num,
             Err(_) => {
                 println!("end todo");
@@ -53,7 +60,20 @@ pub fn exec() {
                 let todo_map = add(&mut todo_map, input("title > "));
                 println!("{:?}", todo_map);
             }
-            2 => {}
+            2 => {
+                for (key, value) in &todo_map {
+                    println!("{}: {}", key, value.title);
+                }
+                let target_number: u32 = match input("number > ").parse() {
+                    Ok(num) => num,
+                    Err(_) => {
+                        println!("end todo");
+                        return;
+                    }
+                };
+                let todo_map = edit(&mut todo_map, target_number);
+                println!("{:?}", todo_map);
+            }
             3 => {
                 for (key, value) in &todo_map {
                     println!("{}: {}", key, value.title);
@@ -70,6 +90,9 @@ pub fn exec() {
                 println!("{:?}", todo_map);
             }
             4 => {}
+            5 => {
+                println!("{:?}", todo_map);
+            }
             _ => {
                 println!("end todo");
                 return;
@@ -84,11 +107,20 @@ fn add(todo_map: &mut HashMap<u32, Todo>, title: String) -> HashMap<u32, Todo> {
         Ok(num) => num,
         Err(_) => return todo_map.clone(),
     };
-    &todo_map.insert(id, new_todo);
+    todo_map.insert(id, new_todo);
     todo_map.clone()
 }
 
-fn edit() {}
+fn edit(todo_map: &mut HashMap<u32, Todo>, number: u32) -> HashMap<u32, Todo> {
+    let binding = todo_map.get(&number);
+    let target_todo = match &binding {
+        Some(todo) => todo,
+        None => return todo_map.clone(),
+    };
+    let updated_todo = &target_todo.update(input("new title > "));
+    todo_map.insert(number, updated_todo.clone());
+    todo_map.clone()
+}
 
 fn done(todo_map: &mut HashMap<u32, Todo>, number: u32) -> HashMap<u32, Todo> {
     let binding = todo_map.get(&number);
@@ -97,7 +129,7 @@ fn done(todo_map: &mut HashMap<u32, Todo>, number: u32) -> HashMap<u32, Todo> {
         None => return todo_map.clone(),
     };
     let done_todo = &target_todo.done();
-    &todo_map.entry(number).or_insert(done_todo.clone());
+    todo_map.insert(number, done_todo.clone());
     todo_map.clone()
 }
 
