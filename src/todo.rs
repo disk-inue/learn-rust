@@ -89,7 +89,20 @@ pub fn exec() {
                 let todo_map = done(&mut todo_map, target_number);
                 println!("{:?}", todo_map);
             }
-            4 => {}
+            4 => {
+                for (key, value) in &todo_map {
+                    println!("{}: {}", key, value.title);
+                }
+                let target_number: u32 = match input("number > ").parse() {
+                    Ok(num) => num,
+                    Err(_) => {
+                        println!("end todo");
+                        return;
+                    }
+                };
+                let todo_map = delete(&mut todo_map, target_number);
+                println!("{:?}", todo_map);
+            }
             5 => {
                 println!("{:?}", todo_map);
             }
@@ -133,4 +146,7 @@ fn done(todo_map: &mut HashMap<u32, Todo>, number: u32) -> HashMap<u32, Todo> {
     todo_map.clone()
 }
 
-fn delete() {}
+fn delete(todo_map: &mut HashMap<u32, Todo>, number: u32) -> HashMap<u32, Todo> {
+    todo_map.remove(&number);
+    todo_map.clone()
+}
