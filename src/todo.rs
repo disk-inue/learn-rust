@@ -1,4 +1,5 @@
 use std::collections::HashMap;
+use std::io::{stdout, Write};
 
 use crate::common::input;
 
@@ -44,8 +45,7 @@ pub fn exec() {
 
     println!("start todo");
     loop {
-        println!("select menu");
-        println!("1. add\n2. edit\n3. done\n4. delete\n5. list");
+        println!("select menu : 1. add, 2. edit, 3. done, 4. delete, 5. list");
 
         let select_number: u8 = match input("> ").parse() {
             Ok(num) => num,
@@ -58,12 +58,11 @@ pub fn exec() {
         match select_number {
             1 => {
                 let todo_map = add(&mut todo_map, input("title > "));
-                println!("{:?}", todo_map);
+                show(&todo_map);
+                stdout().flush().unwrap();
             }
             2 => {
-                for (key, value) in &todo_map {
-                    println!("{}: {}", key, value.title);
-                }
+                show(&todo_map);
                 let target_number: u32 = match input("number > ").parse() {
                     Ok(num) => num,
                     Err(_) => {
@@ -72,12 +71,10 @@ pub fn exec() {
                     }
                 };
                 let todo_map = edit(&mut todo_map, target_number);
-                println!("{:?}", todo_map);
+                show(&todo_map);
             }
             3 => {
-                for (key, value) in &todo_map {
-                    println!("{}: {}", key, value.title);
-                }
+                show(&todo_map);
                 let target_number: u32 = match input("number > ").parse() {
                     Ok(num) => num,
                     Err(_) => {
@@ -85,14 +82,11 @@ pub fn exec() {
                         return;
                     }
                 };
-
                 let todo_map = done(&mut todo_map, target_number);
-                println!("{:?}", todo_map);
+                show(&todo_map);
             }
             4 => {
-                for (key, value) in &todo_map {
-                    println!("{}: {}", key, value.title);
-                }
+                show(&todo_map);
                 let target_number: u32 = match input("number > ").parse() {
                     Ok(num) => num,
                     Err(_) => {
@@ -101,9 +95,10 @@ pub fn exec() {
                     }
                 };
                 let todo_map = delete(&mut todo_map, target_number);
-                println!("{:?}", todo_map);
+                show(&todo_map);
             }
             5 => {
+                show(&todo_map);
                 println!("{:?}", todo_map);
             }
             _ => {
@@ -149,4 +144,11 @@ fn done(todo_map: &mut HashMap<u32, Todo>, number: u32) -> HashMap<u32, Todo> {
 fn delete(todo_map: &mut HashMap<u32, Todo>, number: u32) -> HashMap<u32, Todo> {
     todo_map.remove(&number);
     todo_map.clone()
+}
+
+fn show(todo_map: &HashMap<u32, Todo>) {
+    println!("{}: {}: {}", "number", "title", "status");
+    for (key, value) in todo_map {
+        println!("{}: {}: {:?}", key, value.title, value.status);
+    }
 }
