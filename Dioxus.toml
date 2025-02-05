@@ -1,0 +1,24 @@
+[application]
+
+# App (Project) Name
+name = "learn-rust"
+
+[web.app]
+
+# HTML title tag content
+title = "learn-rust"
+
+# include `assets` in web platform
+[web.resource]
+
+# Additional CSS style files
+style = []
+
+# Additional JavaScript files
+script = []
+
+[web.resource.dev]
+
+# Javascript code file
+# serve: [dev-server] only
+script = []
