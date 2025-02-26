@@ -1,9 +1,0 @@
-/Users/disk-inue/work/workspace/learn-rust/target/debug/deps/libdioxus_core_types-cf345c042ee7aee6.rmeta: /Users/disk-inue/.config/.cargo/registry/src/index.crates.io-6f17d22bba15001f/dioxus-core-types-0.6.2/src/lib.rs /Users/disk-inue/.config/.cargo/registry/src/index.crates.io-6f17d22bba15001f/dioxus-core-types-0.6.2/src/bubbles.rs /Users/disk-inue/.config/.cargo/registry/src/index.crates.io-6f17d22bba15001f/dioxus-core-types-0.6.2/src/bundled.rs /Users/disk-inue/.config/.cargo/registry/src/index.crates.io-6f17d22bba15001f/dioxus-core-types-0.6.2/src/formatter.rs /Users/disk-inue/.config/.cargo/registry/src/index.crates.io-6f17d22bba15001f/dioxus-core-types-0.6.2/src/hr_context.rs
-
-/Users/disk-inue/work/workspace/learn-rust/target/debug/deps/dioxus_core_types-cf345c042ee7aee6.d: /Users/disk-inue/.config/.cargo/registry/src/index.crates.io-6f17d22bba15001f/dioxus-core-types-0.6.2/src/lib.rs /Users/disk-inue/.config/.cargo/registry/src/index.crates.io-6f17d22bba15001f/dioxus-core-types-0.6.2/src/bubbles.rs /Users/disk-inue/.config/.cargo/registry/src/index.crates.io-6f17d22bba15001f/dioxus-core-types-0.6.2/src/bundled.rs /Users/disk-inue/.config/.cargo/registry/src/index.crates.io-6f17d22bba15001f/dioxus-core-types-0.6.2/src/formatter.rs /Users/disk-inue/.config/.cargo/registry/src/index.crates.io-6f17d22bba15001f/dioxus-core-types-0.6.2/src/hr_context.rs
-
-/Users/disk-inue/.config/.cargo/registry/src/index.crates.io-6f17d22bba15001f/dioxus-core-types-0.6.2/src/lib.rs:
-/Users/disk-inue/.config/.cargo/registry/src/index.crates.io-6f17d22bba15001f/dioxus-core-types-0.6.2/src/bubbles.rs:
-/Users/disk-inue/.config/.cargo/registry/src/index.crates.io-6f17d22bba15001f/dioxus-core-types-0.6.2/src/bundled.rs:
-/Users/disk-inue/.config/.cargo/registry/src/index.crates.io-6f17d22bba15001f/dioxus-core-types-0.6.2/src/formatter.rs:
-/Users/disk-inue/.config/.cargo/registry/src/index.crates.io-6f17d22bba15001f/dioxus-core-types-0.6.2/src/hr_context.rs:
