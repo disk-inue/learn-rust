@@ -1,0 +1,9 @@
+/Users/disk-inue/work/workspace/learn-rust/target/wasm32-unknown-unknown/wasm-dev/deps/libwasm_bindgen_futures-d8560e8ed92cda8a.rmeta: /Users/disk-inue/.config/.cargo/registry/src/index.crates.io-6f17d22bba15001f/wasm-bindgen-futures-0.4.50/src/lib.rs /Users/disk-inue/.config/.cargo/registry/src/index.crates.io-6f17d22bba15001f/wasm-bindgen-futures-0.4.50/src/queue.rs /Users/disk-inue/.config/.cargo/registry/src/index.crates.io-6f17d22bba15001f/wasm-bindgen-futures-0.4.50/src/task/singlethread.rs
+
+/Users/disk-inue/work/workspace/learn-rust/target/wasm32-unknown-unknown/wasm-dev/deps/libwasm_bindgen_futures-d8560e8ed92cda8a.rlib: /Users/disk-inue/.config/.cargo/registry/src/index.crates.io-6f17d22bba15001f/wasm-bindgen-futures-0.4.50/src/lib.rs /Users/disk-inue/.config/.cargo/registry/src/index.crates.io-6f17d22bba15001f/wasm-bindgen-futures-0.4.50/src/queue.rs /Users/disk-inue/.config/.cargo/registry/src/index.crates.io-6f17d22bba15001f/wasm-bindgen-futures-0.4.50/src/task/singlethread.rs
+
+/Users/disk-inue/work/workspace/learn-rust/target/wasm32-unknown-unknown/wasm-dev/deps/wasm_bindgen_futures-d8560e8ed92cda8a.d: /Users/disk-inue/.config/.cargo/registry/src/index.crates.io-6f17d22bba15001f/wasm-bindgen-futures-0.4.50/src/lib.rs /Users/disk-inue/.config/.cargo/registry/src/index.crates.io-6f17d22bba15001f/wasm-bindgen-futures-0.4.50/src/queue.rs /Users/disk-inue/.config/.cargo/registry/src/index.crates.io-6f17d22bba15001f/wasm-bindgen-futures-0.4.50/src/task/singlethread.rs
+
+/Users/disk-inue/.config/.cargo/registry/src/index.crates.io-6f17d22bba15001f/wasm-bindgen-futures-0.4.50/src/lib.rs:
+/Users/disk-inue/.config/.cargo/registry/src/index.crates.io-6f17d22bba15001f/wasm-bindgen-futures-0.4.50/src/queue.rs:
+/Users/disk-inue/.config/.cargo/registry/src/index.crates.io-6f17d22bba15001f/wasm-bindgen-futures-0.4.50/src/task/singlethread.rs:

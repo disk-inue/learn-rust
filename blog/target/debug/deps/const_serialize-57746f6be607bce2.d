@@ -1,0 +1,8 @@
+/Users/disk-inue/work/workspace/learn-rust/target/debug/deps/libconst_serialize-57746f6be607bce2.rmeta: /Users/disk-inue/.config/.cargo/registry/src/index.crates.io-6f17d22bba15001f/const-serialize-0.6.2/src/lib.rs /Users/disk-inue/.config/.cargo/registry/src/index.crates.io-6f17d22bba15001f/const-serialize-0.6.2/src/const_buffers.rs /Users/disk-inue/.config/.cargo/registry/src/index.crates.io-6f17d22bba15001f/const-serialize-0.6.2/src/const_vec.rs /Users/disk-inue/.config/.cargo/registry/src/index.crates.io-6f17d22bba15001f/const-serialize-0.6.2/src/../README.md
+
+/Users/disk-inue/work/workspace/learn-rust/target/debug/deps/const_serialize-57746f6be607bce2.d: /Users/disk-inue/.config/.cargo/registry/src/index.crates.io-6f17d22bba15001f/const-serialize-0.6.2/src/lib.rs /Users/disk-inue/.config/.cargo/registry/src/index.crates.io-6f17d22bba15001f/const-serialize-0.6.2/src/const_buffers.rs /Users/disk-inue/.config/.cargo/registry/src/index.crates.io-6f17d22bba15001f/const-serialize-0.6.2/src/const_vec.rs /Users/disk-inue/.config/.cargo/registry/src/index.crates.io-6f17d22bba15001f/const-serialize-0.6.2/src/../README.md
+
+/Users/disk-inue/.config/.cargo/registry/src/index.crates.io-6f17d22bba15001f/const-serialize-0.6.2/src/lib.rs:
+/Users/disk-inue/.config/.cargo/registry/src/index.crates.io-6f17d22bba15001f/const-serialize-0.6.2/src/const_buffers.rs:
+/Users/disk-inue/.config/.cargo/registry/src/index.crates.io-6f17d22bba15001f/const-serialize-0.6.2/src/const_vec.rs:
+/Users/disk-inue/.config/.cargo/registry/src/index.crates.io-6f17d22bba15001f/const-serialize-0.6.2/src/../README.md:
